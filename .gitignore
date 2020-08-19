@@ -1,0 +1,22 @@
+#vsc-workspaces 
+
+*.code-workspace
+*.Rproj.user
+*.Rhistory
+*.Rproj
+
+*.zip
+*.7z
+*.tar
+*.jar
+
+#obj files
+*.o
+*.out
+*.exe
+
+#vsc settings
+.vscode
+
+#linux files
+*.run

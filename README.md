@@ -1,2 +1,2 @@
-# StudyYear_20-21
- A repository for my study year 20-21
+# StudyYear_20_21
+ A repository for my study year 20_21
