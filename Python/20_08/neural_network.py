@@ -1,4 +1,4 @@
-import numpy
+from numpy import *
 
 
 class NeuralNetwork:
@@ -8,8 +8,8 @@ class NeuralNetwork:
         self.onodes = outputNodes
         self.lr = learningRate
         # link weight matrices
-        self.wih = (random.normal(0.0, pow(self.inodes)) - 0.5)
-        self.who = (random.normal(0.0, pow(self.onodes)) - 0.5)
+        self.wih = (random.normal(0.0, pow(self.inodes, - 0.5)))
+        self.who = (random.normal(0.0, pow(self.onodes, - 0.5)))
 
     def train(self):
         pass
