@@ -1,1 +1,6 @@
+#for train data and test data,
+#http:// www. pjreddie. com/ media/ files/ mnist_ train. csv 
+#http:// www. pjreddie. com/ media/ files/ mnist_ test. csv
+
+
 *.csv
