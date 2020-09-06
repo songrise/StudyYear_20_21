@@ -20,3 +20,6 @@
 
 #linux files
 *.run
+
+#vsc Coderunner file
+tempCodeRunnerFile.*
