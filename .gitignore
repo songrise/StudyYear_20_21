@@ -5,12 +5,14 @@
 *.Rhistory
 *.Rproj
 
+# zipped file
+
 *.zip
 *.7z
 *.tar
 *.jar
 
-#obj files
+# obj files
 *.o
 *.out
 *.exe
@@ -20,3 +22,6 @@
 
 #linux files
 *.run
+
+# vsc code runner file
+tempCodeRunnerFile.*

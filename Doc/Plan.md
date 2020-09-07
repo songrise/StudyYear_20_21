@@ -1,0 +1,39 @@
+# Plan
+****
+19-20
+SEM1
+- COMP 1002
+- COMP 1901
+- AMA 1104
+- APSS
+- ELC
+- CAR1
+
+SEM2
+- COMP 1011
+- COMP 1411
+- COMP 1433
+- CLC
+- CAR2
+
+SEM3
+- ELC
+- CAR3
+
+SUM CREDITS 39 GPA 3.65
+20-21
+SEM1
+- COMP 2011 Data Structure
+- COMP 2012 Discrete Math
+- COMP 2021 OOP
+- COMP 2411 Database System
+- COMP 4432 ML
+- COMP 3121 Social computing
+
+SEM2
+- COMP 2322 Computer engineering
+- COMP 2421 CO
+- COMP 2432 OS
+- SL\elective
+
+SUM CREDITS  69 GPA >3.7
