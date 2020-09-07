@@ -23,5 +23,8 @@
 #linux files
 *.run
 
-# vsc code runner file
+#vsc Coderunner file
 tempCodeRunnerFile.*
+
+#java class
+*.class

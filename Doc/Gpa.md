@@ -1,3 +1,6 @@
+GPA Notes
+credits, total, GPA
+
 19-20
 B+
 B+
@@ -16,12 +19,13 @@ B+
 B+
 30 109.5 3.65
 
+---
 20-21(new GPA)
 ---
 A
-A+
-A+
+A+ (discrete)
+A+ (data structure)
 A
-B+
+B+ (TBD...)
 (sem GPA 4.03)
 45 (\apporx)169.9 3.77
