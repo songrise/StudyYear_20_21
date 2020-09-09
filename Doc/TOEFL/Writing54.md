@@ -1,0 +1,7 @@
+The rising salinity in the Salton Sea has been a major problem for years.  Concerning this issue, several ways has been proposed. However, they suffer from the shortage of being less practical.
+
+First, removing salt by desalination facilities is not doable because it may lead to danger. When applying those machines, the water in the lake will evaporate and cause chemical material including salt to precipitate. Although it enabled the direct removal of salt, it will also release other componds, some of which maybe even toxic if spread by wind. So this way is infeasible as it will threaten people's health.
+
+pumping seawater to the lake will dilute the salt level in principle, but it is too costly. Located in the area that is at least 100 km from the coastline, the expense to build a pipeline or cannel is especially high. The government may not be able to cover such a huge financial expense.
+
+Apart from pumping seawater, it is suggest by some that dividing the lake into sectors will decrease the salinity. However, it is not a long-term solution to this problem. Taking into account that reserving the lake ecology requires a long period of time, those separating walls may not be endurable enough to survive from a major geological change such as earthquake. Once those walls destroyed, the salinity will increase again. So on a long time scale, this proposal is not practical.
