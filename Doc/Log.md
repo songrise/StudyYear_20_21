@@ -13,10 +13,18 @@ DMA(Discrete Mathematics and Its Applications) till-1.4 (Predicates and Quantifi
 FDS(Fundamentals of Database Systems) till chapter 3(ER-model)
 DMA till 1.6(Rule of Inference)
 
-9-10 Fri
+9-11 Fri
 DMA till chapter2 (basic structure)
 
-9-11
+9-12 Sat
 TOEFL TPO 
 DMA finished chapter2 (Basic structure)
 TOEFL TPO 30
+
+9-13 Sun
+PolyU contest.
+
+9-14 Mon
+Core java until 4.6.5(parameter names).
+A simply practice:[StuffTest.java](../Java/20_09/StuffTest.java)
+And several questions in DMA.

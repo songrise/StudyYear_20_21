@@ -12,5 +12,6 @@ public class InputTest {
         int age = in.nextInt();
         System.out.println("Hello, " + age + " yrs old " + name);
         System.out.printf("Test printf %.2f", (float) age);
+        in.close();
     }
 }
