@@ -9,6 +9,7 @@
  * @Descriptions: None
  **/
 
+// package songrise.practice;
 import java.util.Arrays;
 
 public class ForEach {

@@ -13,7 +13,8 @@ def numInversions(number: str) -> int:
     return dp[-1]
 
 
-number = str(input("Please input the number(in decimal): "))
+if __name__ == "__main__":
+    number = str(input("Please input the number(in decimal): "))
 
-print("The number of inversions for "+number +
-      " is " + str(numInversions(number)))
+    print("The number of inversions for "+number +
+          " is " + str(numInversions(number)))

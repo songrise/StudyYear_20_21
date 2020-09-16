@@ -1,6 +1,12 @@
 from itertools import permutations
 from math import factorial
 
+# -*- coding : utf-8 -*-
+# @FileName  : n_determinant.py
+# @Author    : Ruixiang JIANG (Songrise)
+# @Time      : 2020-08-14
+# @Github    ：https://github.com/songrise
+# @Descriptions: None
 
 class determinant():
     def __init__(self, val: list):
@@ -61,9 +67,10 @@ class determinant():
         print("The determinant is:" + str(self.result))
 
 
-zero1 = determinant([[1, -2, -3], [2, -4, -6], [-4, 1, -2]])
-zero1.ShowInfo()
+if __name__ == "__main__":
+    zero1 = determinant([[1, -2, -3], [2, -4, -6], [-4, 1, -2]])
+    zero1.ShowInfo()
 
-test1 = determinant([[1, 3, 1, 2], [1, 5, 3, -4],
-                     [0, 4, 1, -1], [-5, 1, 3, -6]])
-test1.ShowInfo()
+    test1 = determinant([[1, 3, 1, 2], [1, 5, 3, -4],
+                         [0, 4, 1, -1], [-5, 1, 3, -6]])
+    test1.ShowInfo()

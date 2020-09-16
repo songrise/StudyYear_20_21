@@ -11,13 +11,12 @@ DMA(Discrete Mathematics and Its Applications) till-1.4 (Predicates and Quantifi
 
 9-10 Tur
 FDS(Fundamentals of Database Systems) till chapter 3(ER-model)
-DMA till 1.6(Rule of Inference)
+DMA till 1.6 (Rule of Inference)
 
 9-11 Fri
 DMA till chapter2 (basic structure)
 
 9-12 Sat
-TOEFL TPO 
 DMA finished chapter2 (Basic structure)
 TOEFL TPO 30
 
@@ -27,4 +26,19 @@ PolyU contest.
 9-14 Mon
 Core java until 4.6.5(parameter names).
 A simply practice:[StuffTest.java](../Java/20_09/StuffTest.java)
-And several questions in DMA.
+And several questions in DMA chapter 1.
+
+I may add some personal reflections on what I've learned on that day starting from today.
+As for a OOP design pattern, it is a good practice to access the object's attribute by a 
+helper method obj.getAtr() instead of directly use obj.atr. (Encapsulation)
+
+9-15 Tue
+Core Java finished chapter4 (objects and class).
+2 OJ, learned some java collections.
+Numpy, pytorch.
+
+9-16
+OJ(java) 2
+FDS part 2.
+
+9-17
