@@ -15,7 +15,7 @@ DMA till 1.6 (Rule of Inference)
 
 9-11 Fri
 DMA till chapter2 (basic structure)
-
+ 
 9-12 Sat
 DMA finished chapter2 (Basic structure)
 TOEFL TPO 30
@@ -38,7 +38,8 @@ Core Java finished chapter4 (objects and class).
 Numpy, pytorch.
 
 9-16
-OJ(java) 2
+Many OJ(java) on leetcode;
 FDS part 2.
+Core Java 5.1(Class SuperClass and Subclasses.)
 
 9-17

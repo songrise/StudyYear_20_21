@@ -1,3 +1,4 @@
+package ClassTest;
 
 /**
  * -*- coding : utf-8 -*-
@@ -9,37 +10,32 @@
  * @Descriptions: Test a Stuff class. Based on textbook..
  **/
 
-class Stuff {
+public class Stuff extends Person {
     // id for the class, declared to be static
     static int id = 1;
     private int stuffId;
-    final private String name;
-    private double income;
+    private double salary;
 
     public Stuff() {
-        this.name = "";
-        this.income = 0;
+        super("");
+        this.salary = 0;
         this.setStuffId();
     }
 
     public Stuff(String name) {
-        this.name = name;
+        super(name);
         this.setStuffId();
 
     }
 
-    public Stuff(String name, double income) {
-        this.name = name;
-        this.income = income;
+    public Stuff(String name, double salary) {
+        super(name);
+        this.salary = salary;
         this.setStuffId();
     }
 
-    private String getName() {
-        return this.name;
-    }
-
-    private double getIncome() {
-        return this.income;
+    double getSalary() {
+        return this.salary;
     }
 
     private int getStuffId() {
@@ -50,24 +46,24 @@ class Stuff {
         this.stuffId = id++;
     }
 
-    boolean changeIncome(double newIncome) {
-        this.income = newIncome;
+    boolean changeSalary(double newsalary) {
+        this.salary = newsalary;
         return true;
     }
 
-    void showInfo() {
-        System.out.printf("Id: %d | Name: %s Income: $%.2f\n", this.getStuffId(), getName(), this.getIncome());
+    public void getDescription() {
+        System.out.printf("Id: %d | Name: %s salary: $%.2f\n", this.getStuffId(), getName(), this.getSalary());
     }
 
 }
 
-public class StuffTest {
+class StuffTest {
     public static void main(String[] args) {
         Stuff Tom = new Stuff("Tom", 400);
-        Tom.showInfo();
-        Tom.changeIncome(1000d);
-        Tom.showInfo();
+        Tom.getDescription();
+        Tom.changeSalary(1000d);
+        Tom.getDescription();
         Stuff Amy = new Stuff("Amy");
-        Amy.showInfo();
+        Amy.getDescription();
     }
 }
