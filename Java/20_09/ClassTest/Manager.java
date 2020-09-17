@@ -17,6 +17,7 @@ public class Manager extends Stuff {
         this.bouns = val;
     }
 
+    @Override
     final double getSalary() {
         return super.getSalary() + this.bouns;
     }

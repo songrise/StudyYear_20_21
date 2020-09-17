@@ -55,6 +55,11 @@ public class Stuff extends Person {
         System.out.printf("Id: %d | Name: %s salary: $%.2f\n", this.getStuffId(), getName(), this.getSalary());
     }
 
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return getClass().getName() + " [name =" + this.getName() + " salary=" + this.getSalary() + "]";
+    }
 }
 
 class StuffTest {
@@ -65,5 +70,7 @@ class StuffTest {
         Tom.getDescription();
         Stuff Amy = new Stuff("Amy");
         Amy.getDescription();
+
+        System.out.println(Amy);// Amy.toString
     }
 }
