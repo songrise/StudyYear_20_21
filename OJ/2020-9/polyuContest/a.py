@@ -1,0 +1,2 @@
+case = int(input())
+ans = []
