@@ -47,3 +47,7 @@ FDS part 2 review.
 Core Java till 5.5(Methods with a Variable Number of Parameters)  
 Oj on leet code   
 posted a [new_passage](http://www.songrise.xyz/reading%20notes/2020/09/16/JavaNote/) on my blog  
+
+9-21
+java Review, project assignment
+ML review (Decision tree)

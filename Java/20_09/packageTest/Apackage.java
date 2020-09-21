@@ -14,7 +14,7 @@ class Apackage {
     private int i = 0;
     public int j = 0;
 
-    void Apackage() {
+    Apackage() {
         this.i = 1;
         this.j = 2;
     }
