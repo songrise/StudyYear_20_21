@@ -49,5 +49,18 @@ Oj on leet code
 posted a [new_passage](http://www.songrise.xyz/reading%20notes/2020/09/16/JavaNote/) on my blog  
 
 9-21
-java Review, project assignment
-ML review (Decision tree)
+java revise, project assignment
+ML revise (Decision tree)
+DMA a quick revise of chapter 2
+
+core JAVA finished chapter 5(Inheritance) learned an important concept -- Reflection .
+
+
+9-22
+
+core JAVA 6.1(Interface)  
+FDS chapter 5(Relational data model and relational database) and 6.1(SQL datatypes).  
+revise data structure.  
+Serialization [test](../Java/20_09/InterfaceTest/testSerializable.java)  
+
+9-33

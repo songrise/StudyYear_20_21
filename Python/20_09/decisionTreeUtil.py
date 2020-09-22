@@ -19,6 +19,7 @@ class DTUtill:
         return an floating number.
         """
         if p == 0 and n == 0:
+            print("two set cannot be all empty!")
             raise ZeroDivisionError
         elif p == 0 or n == 0:
             return 0

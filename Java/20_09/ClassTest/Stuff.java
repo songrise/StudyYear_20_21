@@ -1,5 +1,7 @@
 package ClassTest;
 
+import java.util.Arrays;
+
 /**
  * -*- coding : utf-8 -*-
  * 
@@ -10,7 +12,7 @@ package ClassTest;
  * @Descriptions: Test a Stuff class. Based on textbook..
  **/
 
-public class Stuff extends Person {
+public class Stuff extends Person implements Comparable {
     // id for the class, declared to be static
     static int id = 1;
     private int stuffId;
@@ -60,6 +62,12 @@ public class Stuff extends Person {
         // TODO Auto-generated method stub
         return getClass().getName() + " [name =" + this.getName() + " salary=" + this.getSalary() + "]";
     }
+
+    public int compareTo(Object o) {
+        Stuff s = (Stuff) o;
+        // TODO Auto-generated method stub
+        return Double.compare(this.salary, s.salary);
+    }
 }
 
 class StuffTest {
@@ -70,7 +78,17 @@ class StuffTest {
         Tom.getDescription();
         Stuff Amy = new Stuff("Amy");
         Amy.getDescription();
-
         System.out.println(Amy);// Amy.toString
+
+        var StuffArr = new Stuff[3];
+        StuffArr[0] = new Stuff("Tom", 1000);
+        StuffArr[1] = new Stuff("Jack", 3000);
+        StuffArr[2] = new Stuff("Carl", 1400);
+
+        Arrays.sort(StuffArr);
+        for (Stuff s : StuffArr) {
+            System.out.println("name = " + s.getName() + " Salary= " + s.getSalary());
+        }
+
     }
 }
