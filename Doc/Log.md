@@ -63,4 +63,9 @@ FDS chapter 5(Relational data model and relational database) and 6.1(SQL datatyp
 revise data structure.  
 Serialization [test](../Java/20_09/InterfaceTest/testSerializable.java)  
 
-9-33
+9-23
+
+DMA: Briefly read Chapter5 (5.1, 5.3, 5.4, 5.5), I should review this part later.
+
+9-25
+FDS: read Chapter3 (SQL) and solved some SQL problems.

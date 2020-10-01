@@ -1,7 +1,6 @@
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 /**
  * -*- coding : utf-8 -*-
@@ -15,9 +14,8 @@ import java.util.Map;
 
 class Solution {
     public boolean isValid(String s) {
-
         int len = s.length();
-        Map<Character, Character> pair = new HashMap<Character, Character>() {
+        HashMap<Character, Character> pair = new HashMap<Character, Character>() {
             {
                 put(')', '(');
                 put(']', '[');
@@ -38,4 +36,6 @@ class Solution {
         }
         return stack.isEmpty();
     }
+
+
 }

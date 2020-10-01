@@ -7,7 +7,7 @@ public class BiArray {
 	public static void test1() {
 		long startTime = 0;
 		double duration = 0;
-		int N = 1 << 14; // 32768
+		int N = 1 << 12; // 32768
 		System.out.println("N = " + N);
 
 		SecureRandom random = new SecureRandom();
@@ -47,5 +47,6 @@ public class BiArray {
 
 	public static void main(String[] args) {
 		test1();
+		test2();
 	}
 }
