@@ -1,6 +1,6 @@
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashMap;
-import java.util.LinkedList;
 
 /**
  * -*- coding : utf-8 -*-
@@ -22,7 +22,7 @@ class Solution {
                 put('}', '{');
             }
         };
-        Deque<Character> stack = new LinkedList<Character>();
+        Deque<Character> stack = new ArrayDeque<Character>();
         for (int i = 0; i < len; i++) {
             char ch = s.charAt(i);
             if (pair.containsKey(ch)) {
@@ -36,6 +36,5 @@ class Solution {
         }
         return stack.isEmpty();
     }
-
 
 }
