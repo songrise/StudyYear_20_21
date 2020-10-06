@@ -69,3 +69,7 @@ DMA: Briefly read Chapter5 (5.1, 5.3, 5.4, 5.5), I should review this part later
 
 9-25
 FDS: read Chapter3 (SQL) and solved some SQL problems.
+
+
+10-04 10-05
+Java inner class, exception, closure, singleton pattern, lambda expression.(Core JAVA until 7.3)
