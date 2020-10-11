@@ -1,6 +1,7 @@
 package comp2011.ass1;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 
 /**
  * 
@@ -64,6 +65,7 @@ class MyArrayHeapUtil {
             a[smallest] = temp;
             // 交换元素后，以a[i]为根的树可能不在满足大根堆性质，于是递归调用该方法
             heapify(a, smallest, heapLength);
+            Arrays.sort(a);
         }
     }
 
