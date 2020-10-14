@@ -55,6 +55,6 @@ class DTUtill:
 
 if __name__ == "__main__":
 
-    print(DTUtill.Information(9, 5))
+    print(DTUtill.Information(4, 6))
     print(DTUtill.Entropy([[2, 3], [4, 0], [3, 2]]))
     print(DTUtill.Gain([[2, 3], [4, 0], [3, 2]]))
