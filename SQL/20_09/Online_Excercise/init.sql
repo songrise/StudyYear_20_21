@@ -46,3 +46,11 @@ insert into SC values('07' , '02' , 89);
 insert into SC values('07' , '03' , 98);
 
 
+-- create trigger on Student
+-- after insert
+-- as 
+--     declare @insertid int
+--     if (@insertid in (select Sid from student))
+--     begin
+--         rollback
+--     end;
