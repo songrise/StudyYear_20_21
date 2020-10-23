@@ -1,3 +1,9 @@
+# -*- coding : utf-8 -*-
+# @FileName  : comp2411Util.py
+# @Author    : Ruixiang JIANG (Songrise)
+# @Time      : 2020-10-23
+# @Github    ：https://github.com/songrise
+# @Descriptions: None
 
 index = 1
 for i in range(1, 6):

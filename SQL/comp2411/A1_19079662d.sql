@@ -1,11 +1,13 @@
--- FINAL_YEAR_PROJ
-SET LINESIZE 150;
+-- coding UTF-8 --
+-- FINAL_YEAR_PROJ_ALLOC
+-- ! NOTICE this sql file will lead to Oracle Error Intentionally for demonstration!!!
+SET LINESIZE 170;
 DROP TABLE STUDENT;
 DROP TABLE WORKS_ON;
 DROP TABLE PREFER;
 DROP TABLE PROJECT;
 DROP TABLE INSTRUCTOR;
-commit;
+COMMIT;
 
 
 CREATE TABLE STUDENT (
@@ -13,7 +15,7 @@ CREATE TABLE STUDENT (
     STU_NAME VARCHAR(30) NOT NULL,
     EMAIL VARCHAR(40),
     PREFERENCE_FULFILLED NUMERIC(1,0) DEFAULT (0),
-    CHECK (PREFERENCE_FULFILLED IN (0,1)),
+    CHECK (PREFERENCE_FULFILLED IN (0,1)), --0 means not fulfilled , 1 is fulfilled
     PRIMARY KEY (STU_ID)
 );
 
@@ -31,7 +33,7 @@ CREATE TABLE PROJECT(
     PROJ_STATUS VARCHAR(10) DEFAULT 'AVAILABLE',
     PRIMARY KEY (PROJ_ID),
     FOREIGN KEY (INST_ID) REFERENCES INSTRUCTOR(INST_ID),
-    CHECK (PROJ_STATUS IN ('AVAILABLE', 'IN PROCESS', 'FINISHED', 'CANCELED'))
+    CHECK (PROJ_STATUS IN ('AVAILABLE', 'IN PROCESS', 'FINISHED', 'CANCELED')) --useful for later extension
 );
 
 
@@ -41,7 +43,8 @@ CREATE TABLE WORKS_ON(
     PROJ_ID NUMERIC(5, 0),
     FOREIGN KEY (STU_ID) REFERENCES STUDENT(STU_ID),
     FOREIGN KEY (PROJ_ID) REFERENCES PROJECT(PROJ_ID),
-    UNIQUE (PROJ_ID)
+    UNIQUE (PROJ_ID), --a project can only be worked by one student
+    UNIQUE (STU_ID) --a student can only work on one project
 );
 
 CREATE TABLE PREFER(
@@ -56,22 +59,46 @@ CREATE TABLE PREFER(
     FOREIGN KEY (PROJ_2) REFERENCES PROJECT(PROJ_ID),
     FOREIGN KEY (PROJ_3) REFERENCES PROJECT(PROJ_ID),
     FOREIGN KEY (PROJ_4) REFERENCES PROJECT(PROJ_ID),
-    FOREIGN KEY (PROJ_5) REFERENCES PROJECT(PROJ_ID)
+    FOREIGN KEY (PROJ_5) REFERENCES PROJECT(PROJ_ID),
+    UNIQUE(STU_ID) --a student can only have one prefer list
 );
 
---! This trigger tests if a student indicated 5 valid preference.
+
+-- This trigger tests if a student have indicated 5 valid preference.
 CREATE OR REPLACE TRIGGER PREFERENCE_FULFILLMENT_CHECK
 AFTER INSERT OR UPDATE OF PROJ_1,PROJ_2,PROJ_3,PROJ_4,PROJ_5
 ON PREFER
 FOR EACH ROW
 DECLARE 
-    I NUMBER;
-BEGIN
-    IF :NEW.PROJ_1 IS NOT NULL AND :NEW.PROJ_2 IS NOT NULL AND :NEW.PROJ_3 IS NOT NULL AND :NEW.PROJ_4 IS NOT NULL AND :NEW.PROJ_5 IS NOT NULL THEN
-        UPDATE STUDENT
+    DISTINCT_INST NUMBER;
+BEGIN --I confess that these codes are indeed ugly.
+    IF :NEW.PROJ_1 IS NOT NULL AND :NEW.PROJ_2 IS NOT NULL 
+    AND :NEW.PROJ_3 IS NOT NULL AND :NEW.PROJ_4 IS NOT NULL 
+    AND :NEW.PROJ_5 IS NOT NULL THEN -- it means all 5 project are selected
+        SELECT COUNT(DISTINCT INST_ID) INTO DISTINCT_INST
+            FROM (
+            SELECT INST_ID
+            FROM  PROJECT 
+            WHERE :NEW.PROJ_1 = PROJ_ID UNION 
+            SELECT INST_ID
+            from  PROJECT 
+            WHERE :NEW.PROJ_2 = PROJ_ID UNION 
+            SELECT INST_ID
+            from  PROJECT 
+            WHERE :NEW.PROJ_3 = PROJ_ID UNION 
+            SELECT INST_ID 
+            from  PROJECT 
+            WHERE :NEW.PROJ_4 = PROJ_ID UNION 
+            SELECT INST_ID
+            from  PROJECT 
+            WHERE :NEW.PROJ_5 = PROJ_ID);
+        IF DISTINCT_INST <> 5 THEN 
+            RAISE_APPLICATION_ERROR(-20000,'Duplicate instructors detected!');
+        END IF;
+        UPDATE STUDENT --if this line is reached, the preference list is valid
         SET PREFERENCE_FULFILLED = 1
         WHERE STU_ID = :NEW.STU_ID;
-    ELSE
+    ELSE --choosed less than 5 projects
         UPDATE STUDENT
         SET PREFERENCE_FULFILLED = 0
         WHERE STU_ID = :NEW.STU_ID;
@@ -81,7 +108,7 @@ END;
 
 
 
---! this trigger update project status after a student start to do it.
+-- this trigger update project status after a student start to do it.
 CREATE OR REPLACE TRIGGER PROJECT_DOING
 AFTER INSERT ON WORKS_ON
 FOR EACH ROW
@@ -92,13 +119,14 @@ BEGIN
 END;
 /
 
--- this trigger checks validity of preference
+-- this trigger checks validity of preference (It is not doing by anyone)
+-- this is an addtional feature, you may just ignore this.
 CREATE OR REPLACE TRIGGER PREFERENCE_VALID_CHECK
 BEFORE INSERT ON PREFER
 FOR EACH ROW
 DECLARE 
     STATUS VARCHAR(10);
-BEGIN 
+BEGIN -- only projects whose status is 'AVAILABLE' can be selected as preference
     SELECT PROJ_STATUS INTO STATUS 
         FROM PROJECT WHERE PROJ_ID = :NEW.PROJ_1;
     IF STATUS <> 'AVAILABLE' THEN
@@ -124,13 +152,12 @@ BEGIN
     IF STATUS <> 'AVAILABLE' THEN
         RAISE_APPLICATION_ERROR(-20001,'Project5 inavailable!');
     END IF;
-
-
 END;
 /
 
 COMMIT;
 
+--A TEST CASE, 19 STUDENTS, 5 INSTRUCTORS
 INSERT INTO STUDENT VALUES('S0001','Lawrence Vickers','Lawrence_Vickers@ABC.edu',DEFAULT);
 INSERT INTO STUDENT VALUES('S0002','Olaf Williams','Olaf_Williams@ABC.edu',DEFAULT);
 INSERT INTO STUDENT VALUES('S0003','Sierra Ashton','Sierra_Ashton@ABC.edu',DEFAULT);
@@ -223,16 +250,41 @@ INSERT INTO WORKS_ON VALUES ('S0019',00019);
 
 
 COMMIT;
--- This is contact information
+
+-- show all tables. 
+SELECT * FROM STUDENT;
+SELECT * FROM INSTRUCTOR;
+SELECT * FROM PROJECT;
+SELECT * FROM PREFER;
+SELECT * FROM WORKS_ON;
+
+--! here are some testing, some will lead to error
+-- This is query for contact information
 SELECT PROJ_ID, STUDENT.EMAIL AS STUDENT_EMAIL, INSTRUCTOR.EMAIL AS INSTRUCTOR_EMAIL
 FROM STUDENT NATURAL JOIN WORKS_ON
              NATURAL JOIN PROJECT 
              LEFT JOIN INSTRUCTOR ON PROJECT.INST_ID = INSTRUCTOR.INST_ID;
 
--- this two lines shows how preference_fulfilled work
+-- this three lines shows how preference_fulfilled work
+SELECT * FROM STUDENT WHERE STU_ID = 'S0001';
 UPDATE PREFER SET PROJ_1 = NULL WHERE STU_ID = 'S0001';
-SELECT * FROM STUDENT WHERE STU_ID = 'S0001'
+SELECT * FROM STUDENT WHERE STU_ID = 'S0001';
+
+-- entity constraint violation
+INSERT INTO STUDENT VALUES(NULL,'Lawrence Vickers','Lawrence_Vickers@ABC.edu',DEFAULT);
+INSERT INTO INSTRUCTOR VALUES(NULL,'Gurdeep Churchill','Gurdeep_Churchill@ABC.edu');
 
 
-INSERT INTO WORKS_ON VALUES ('S0002',00001);
-INSERT INTO PREFER VALUES ('S0001',00001,00005,00009,00013,00017);
+-- referential integrity constraint violation
+INSERT INTO PROJECT VALUES(00021,'This instructor not exists','I0006',DEFAULT);
+INSERT INTO PREFER VALUES ('S0001',00000,09912,12312,00313,00117);
+
+-- key constraint violation
+INSERT INTO STUDENT VALUES('S0001','Duplicate Man','Duplicate_Man@ABC.edu',DEFAULT);
+INSERT INTO PROJECT VALUES(00001,'How to duplicate key','I0001',DEFAULT);
+
+-- this line will violence the constraint of distinct instructor
+-- if you want to see how this works, copy this line to line 209.
+INSERT INTO PREFER VALUES ('S0001',00001,00002,00009,00013,00020);
+
+ROLLBACK;
