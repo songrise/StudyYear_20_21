@@ -22,10 +22,11 @@ B+
 ---
 20-21(new GPA)
 ---
-A
+A  (OOP)  
 A+ (discrete)
-A+ (data structure)
-A
-B+ (TBD...)
-(sem GPA 4.03)
-45 (\apporx)169.9 3.77
+A- (data structure)
+A  (database)
+B+ (ML)
+A+ (AMA)
+(sem GPA 3.91)
+47 (\apporx)176 3.745
