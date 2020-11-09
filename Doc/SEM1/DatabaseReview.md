@@ -36,7 +36,7 @@ NULL值运算的特性？ 如何在聚集函数中避免？
 
 ## 关系代数   
 select, project 有何特性，对应SQL中的什么？
-何为Union capatibility? 有何用？
+何为Union compatibility? 有何用？
 natural join equijoin 区别
 什么是 ralational complete？
 
