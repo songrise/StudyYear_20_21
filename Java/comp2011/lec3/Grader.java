@@ -1,4 +1,4 @@
-package comp2011.lec3;
+// package comp2011.lec3;
 
 public class Grader {
     private static double score(int min, int correct, int wrong) {
@@ -13,7 +13,7 @@ public class Grader {
     }
     
     public static void main(String[] args) {
-        score(35, 40, 4);
+        score(60, 80, 6);
     }
 
 }

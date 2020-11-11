@@ -1,4 +1,4 @@
-package comp2011.lec7;
+// package comp2011.lec7;
 import java.util.Arrays;
 
 public class BinarySort {

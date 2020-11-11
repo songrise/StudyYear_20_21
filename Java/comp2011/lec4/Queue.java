@@ -1,11 +1,11 @@
 package comp2011.lec4;
 
-/** 
+/**
  * The way of implementing a queue with a circular array.
  * 
- * The <em>front</em> index of the first element of the queue, 
- *      the element that would be read (dequeue and peek).
- * The <em>rear</em> index of the last element of the queue.
+ * The <em>front</em> index of the first element of the queue, the element that
+ * would be read (dequeue and peek). The <em>rear</em> index of the last element
+ * of the queue.
  *
  */
 public class Queue<T> {
@@ -17,67 +17,74 @@ public class Queue<T> {
         this(CAPACITY);
     }
 
-    public Queue(int size){
+    public Queue(int size) {
         data = new Object[size];
         front = 0;
         rear = -1;
     }
 
     public boolean isEmpty() {
-    	return size() == 0;
+        return size() == 0;
     }
 
     public int size() {
-        if (rear == front - 1) return 0;
+        if (rear == front - 1)
+            return 0;
         return (rear - front + data.length) % data.length + 1;
         // Note that "+ data.length" in the parentheses, and the final "+1";
         // Consider, e.g., the case front = data.length - 3 and rear = 4.
     }
 
     public boolean isFull() {
-    	return size() == data.length - 1;
+        return size() == data.length - 1;
     }
 
     public void enqueue(T e) {
         // Uncomment this to see the change of indices.
-        // System.out.println("before enquequing, front = " + front + "; rear = " + rear);
+        // System.out.println("before enquequing, front = " + front + "; rear = " +
+        // rear);
         if (isFull()) {
             System.out.println("Error: queue is full.");
             return;
         }
 
-        if (++rear == data.length) rear = 0;   // right end reached
+        if (++rear == data.length)
+            rear = 0; // right end reached
         data[rear] = e;
         // Uncomment this to see the change of indices.
-        // System.out.println("after enquequing, front = " + front + "; rear = " + rear);
+        // System.out.println("after enquequing, front = " + front + "; rear = " +
+        // rear);
     }
 
     @SuppressWarnings("unchecked")
     public T dequeue() {
         // Uncomment this to see the change of indices.
-        // System.out.println("before dequequing, front = " + front + "; rear = " + rear);
+        // System.out.println("before dequequing, front = " + front + "; rear = " +
+        // rear);
 
         if (isEmpty()) {
             System.out.println("Error: empty queue.");
             return null;
         }
-        
+
         T a = (T) data[front++];
-        if (front == data.length) front = 0;  // right end 
+        if (front == data.length)
+            front = 0; // right end
         // Uncomment this to see the change of indices.
-        // System.out.println("after dequequing, front = " + front + "; rear = " + rear);
-        
+        // System.out.println("after dequequing, front = " + front + "; rear = " +
+        // rear);
+
         return a;
     }
 
     public String toString() {
-        if (isEmpty()) return "The queue is empty.";
+        if (isEmpty())
+            return "The queue is empty.";
         StringBuilder sb = new StringBuilder();
         if (rear >= front) {
             for (int i = front; i <= rear; i++)
                 sb.append(data[i]);
-        }
-        else {
+        } else {
             for (int i = front; i < data.length; i++)
                 sb.append(data[i]);
             for (int i = 0; i <= rear; i++)

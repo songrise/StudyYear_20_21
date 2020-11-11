@@ -4,22 +4,22 @@ package comp2011.lec4;
  * 
  * @author yixin cao (September 26, 2020)
  *
- * The stack implementation with generics.
+ *         The stack implementation with generics.
  */
 public class Stack<T> {
 	private static final int CAPACITY = 128;
 	private Object[] data;
 	private int top;
 
-    public Stack() {
-        this(CAPACITY);
-    }
-    
-    public Stack(int size){
-        top = -1;
-        data = new Object[size];
-    }
-    
+	public Stack() {
+		this(CAPACITY);
+	}
+
+	public Stack(int size) {
+		top = -1;
+		data = new Object[size];
+	}
+
 	public void push(T element) {
 		if (top == data.length - 1) {
 			System.out.println("overflow");
@@ -29,7 +29,7 @@ public class Stack<T> {
 	}
 
 	@SuppressWarnings("unchecked")
-    public T pop() {
+	public T pop() {
 		if (isEmpty()) {
 			System.out.println("underflow");
 			return null;
@@ -37,7 +37,7 @@ public class Stack<T> {
 		return (T) data[top--];
 	}
 
-    @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
 	public T peek() {
 		return (T) data[top];
 	}
@@ -46,13 +46,14 @@ public class Stack<T> {
 		return top < 0;
 	}
 
-    public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<Integer>();
-        int n = 100;
-        while (n > 0) {
-            stack.push(n % 2);
-            n /= 2;
-        }
-        while (!stack.isEmpty()) System.out.print(stack.pop());
-    }
+	public static void main(String[] args) {
+		Stack<Integer> stack = new Stack<Integer>();
+		int n = 100;
+		while (n > 0) {
+			stack.push(n % 2);
+			n /= 2;
+		}
+		while (!stack.isEmpty())
+			System.out.print(stack.pop());
+	}
 }

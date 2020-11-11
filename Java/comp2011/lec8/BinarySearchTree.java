@@ -1,4 +1,4 @@
-// package comp2011.lec8;
+package lec8;
 
 import java.util.ArrayDeque;
 import java.util.Scanner;
@@ -288,27 +288,28 @@ public class BinarySearchTree<T> {
 
     // Optional tasks
     public void levelDisplay() {
-
-        ArrayDeque<Node<T>> q = new ArrayDeque<>() {
+        if (root == null) {
+            return;
+        }
+        ArrayDeque<Node<T>> q = new ArrayDeque<Node<T>>() {
             {
                 addFirst(root);
             }
         };
-        int max = 1;
-        int PLACE_HOLDER = -1;
+        int level = 1;
         while (!q.isEmpty()) {
-            for (int i = 0; i < max; i++) {
+            for (int i = 0; i < level; i++) {
                 Node<T> crtNode = q.pollLast();
-                if (crtNode.key != PLACE_HOLDER) {
-                    System.out.printf(crtNode.toString() + " ");
-                    q.addFirst(crtNode.leftChild == null ? new Node(PLACE_HOLDER, null) : crtNode.leftChild);
-                    q.addFirst(crtNode.rightChild == null ? new Node(PLACE_HOLDER, null) : crtNode.rightChild);
-                } else {
-                    System.out.printf("null, ");
+
+                System.out.printf(crtNode.data.toString() + " ");
+                if (crtNode.leftChild != null) {
+                    q.addFirst(crtNode.leftChild);
+                }
+                if (crtNode.rightChild != null) {
+                    q.addFirst(crtNode.rightChild);
                 }
             }
-            System.out.println("");
-            max <<= 1;
+            level <<= 1;
         }
     }
 
