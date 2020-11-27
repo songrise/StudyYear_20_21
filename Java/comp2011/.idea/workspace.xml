@@ -20,8 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bbfa020-e47c-481e-ac06-1a7dd8446b8a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ass1/Elizebath.java" beforeDir="false" afterPath="$PROJECT_DIR$/ass1/Elizebath.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python/20_09/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python/20_09/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec4/DList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec4/DList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec4/IntStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec4/IntStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec4/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec4/LinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec4/PriorityQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec4/PriorityQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec4/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec4/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec4/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec4/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec5/Collatz.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec5/Collatz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec5/DivideAndConquer.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec5/DivideAndConquer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec5/HanoiTowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec5/HanoiTowers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec5/Recursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec5/Recursion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec5/Sorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec5/Sorting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec6/Sorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec6/Sorting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec7/BinarySort.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec7/BinarySort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec7/Sorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec7/Sorting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lec8/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec8/BinarySearchTree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +55,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/SEM1/COMP_2011_DataStructure/A1/comp2011" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="BinarySearchTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lec8.BinarySearchTree" />
+      <module name="comp2011" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lec8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BinarySearchTree" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,11 +98,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="535" y="207" key="FileChooserDialogImpl" timestamp="1602416001302">
-      <screen x="71" y="0" width="1369" height="960" />
+    <state x="694" y="240" key="FileChooserDialogImpl" timestamp="1605017631617">
+      <screen x="0" y="0" width="2048" height="1112" />
     </state>
+    <state x="694" y="240" key="FileChooserDialogImpl/0.0.2048.1112@0.0.2048.1112" timestamp="1605017631617" />
     <state x="535" y="207" key="FileChooserDialogImpl/71.0.1369.960@71.0.1369.960" timestamp="1602416001302" />
   </component>
 </project>

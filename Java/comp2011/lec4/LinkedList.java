@@ -1,4 +1,4 @@
-package comp2011.lec4;
+// package comp2011.lec4;
 
 /**
  * 
@@ -19,7 +19,7 @@ public class LinkedList<T> {
     Node<T> head; // tail
 
     public LinkedList() {
-        head = null; 
+        head = null;
     }
 
     public void insertFirst(T a) {
@@ -54,7 +54,7 @@ public class LinkedList<T> {
             insertFirst(a);
             return;
         }
-        
+
         Node<T> cur = head;
         // at the end of this while loop,
         // cur will be the node that points to insertionPoint
@@ -64,7 +64,7 @@ public class LinkedList<T> {
         newNode.next = cur.next;
         cur.next = newNode;
     }
-    
+
     public T removeFirst() {
         if (head == null) {
             System.out.println("underflow");
@@ -72,7 +72,7 @@ public class LinkedList<T> {
         }
         Node<T> temp = head;
         head = head.next;
-        temp.next = null;      // optional but suggested.
+        temp.next = null; // optional but suggested.
         return temp.element;
     }
 
@@ -86,28 +86,29 @@ public class LinkedList<T> {
             secondToLast = secondToLast.next;
             last = last.next;
         }
-        
-        secondToLast.next = null;   // very important: many bugs are from omission of this step.
+
+        secondToLast.next = null; // very important: many bugs are from omission of this step.
         return last.element;
     }
 
     public boolean isEmpty() {
         return head == null;
     }
-    
+
     public Node<T> search(T a) {
         Node<T> cur = head;
-        while(cur != null && cur.element != a) 
+        while (cur != null && cur.element != a)
             cur = cur.next;
         return cur;
     }
 
     public String toString() {
-        if (head == null) return "The list is empty.";
+        if (head == null)
+            return "The list is empty.";
         StringBuilder sb = new StringBuilder();
         sb.append(head.element);
         Node<T> cur = head.next;
-        while ( cur != null ) {
+        while (cur != null) {
             sb.append(" -> " + cur.element);
             cur = cur.next;
         }
@@ -128,15 +129,16 @@ public class LinkedList<T> {
         list.insertLast(38);
         System.out.println("After inserting 37, 99, 12 in the front and then 38 at the end, we get");
         System.out.println(list);
-        
+
         Node<Integer> n99 = list.head;
-        while(n99.next != null) n99 = n99.next;
+        while (n99.next != null)
+            n99 = n99.next;
         list.insertAfter(n99, 75);
         System.out.println(list);
         list.insertBefore(n99, 55);
         System.out.println(list);
 
-        System.out.println("delete the last, which is " + list.removeLast());       
+        System.out.println("delete the last, which is " + list.removeLast());
         System.out.println(list);
     }
 }
