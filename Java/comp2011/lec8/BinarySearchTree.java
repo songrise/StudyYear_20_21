@@ -314,7 +314,51 @@ public class BinarySearchTree<T> {
 
     // non-recursive version: very very very difficult; too many cases to consider.
     public boolean delete(int key) {
-        return false;
+        root = deleteNode(root, key);
+    }
+
+    Node<T> iterDelNode(Node<T> x, int key) {
+        if (x == null) {
+            return null;
+        }
+        ArrayDeque<Node<T>> stack = new ArrayDeque<>() {
+            {
+                push(x);
+            }
+        };
+
+        while (!stack.isEmpty()) {
+            Node<T> crtNode = stack.pop();
+            if (crtNode.key < x.key) {
+                stack.push(crtNode.leftChild);
+                continue;
+            }
+            if (crtNode.key > x.key) {
+                stack.push(crtNode.leftChild);
+                continue;
+            }
+
+        }
+    }
+
+    Node<T> deleteNode(Node<T> x, int key) {
+        if (x == null)
+            return null;
+        if (key < x.key)
+            x.lC = delete(x.lC, key);
+        else if (key > x.key)
+            x.rC = delete(x.rC, key);
+        else { // x is the node to be deleted.
+            if (x.rC == null)
+                return x.lC;
+            if (x.lC == null)
+                return x.rC;
+            Node<T> t = x;
+            x = recFindMin(t.rC);
+            x.rC = deleteMin(t.rC);
+            x.lC = t.lC;
+        }
+        return x;
     }
 
     // Other easy exercises
