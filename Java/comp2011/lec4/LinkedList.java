@@ -1,4 +1,4 @@
-// package comp2011.lec4;
+package comp2011.lec4;
 
 /**
  * 
