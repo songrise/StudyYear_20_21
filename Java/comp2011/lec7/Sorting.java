@@ -1,4 +1,4 @@
-// package comp2011.lec7;
+package comp2011.lec7;
 
 import java.util.*;
 import java.security.SecureRandom;
@@ -80,8 +80,8 @@ public class Sorting {
 
     public static void quicksort(int[] a) {
         // quicksort(a, 0, a.length - 1);
-        // naive(a, 0, a.length - 1);
-        quicksortLomuto(a, 0, a.length - 1);
+        naive(a, 0, a.length - 1);
+        // quicksortLomuto(a, 0, a.length - 1);
     }
 
     // !=====================
@@ -117,32 +117,32 @@ public class Sorting {
     }
     // !=====================
 
-    public static void selectionSort(int[] arr) {
-        int l = arr.length;
-        int min = 0x80000000;
-        for (int i = 0; i < l - 1; i++) {
-            min = i;
-            for (int j = i + 1; j < l; j++) {
-                if (arr[min] >= arr[j]) {
-                    min = j;
-                }
-                swap(arr, min, i);
-            }
-        }
-    }
+    // public static void selectionSort(int[] arr) {
+    // int l = arr.length;
+    // int min = 0x80000000;
+    // for (int i = 0; i < l - 1; i++) {
+    // min = i;
+    // for (int j = i + 1; j < l; j++) {
+    // if (arr[min] >= arr[j]) {
+    // min = j;
+    // }
+    // swap(arr, min, i);
+    // }
+    // }
+    // }
 
-    public static void tsort(int[] a) {
-        int n = a.length;
-        for (int i = n - 1; i < 0; --i) {
-            int k = i;
-            for (int j = 0; j < i; j++) {
-                if (a[k] < a[j])
-                    k = j;
-                swap(a, i, k);
-            }
+    // public static void tsort(int[] a) {
+    // int n = a.length;
+    // for (int i = n - 1; i < 0; --i) {
+    // int k = i;
+    // for (int j = 0; j < i; j++) {
+    // if (a[k] < a[j])
+    // k = j;
+    // swap(a, i, k);
+    // }
 
-        }
-    }
+    // }
+    // }
 
     public static void main(String args[]) {
         int[] a = { 3, 2, 6, 13, 8, 4, 10, 7, 14, 11, 12, 5, 9 };
@@ -155,7 +155,7 @@ public class Sorting {
 
         // int[] a = { 1, 3, 2, 6, 7, 5, 4, 12, 13, 15, 14, 10, 11, 9, 8 };
         System.out.println("original: " + Arrays.toString(a));
-        tsort(a);
+        quicksort(a);
         System.out.println("qsort: " + Arrays.toString(a));
         // mergeSort(a);
         // System.out.println("mergesort: " + Arrays.toString(a));

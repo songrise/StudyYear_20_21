@@ -19,7 +19,7 @@ public class BinaryTree<T> {
         while (!q.isEmpty()) {
             Node<T> cur = q.poll();
             System.out.println(cur.data); // assume implemented toString()
-            if (cur.leftCHild != null)
+            if (cur.leftChild != null)
                 q.add(cur.leftChild);
             if (cur.rightChild != null)
                 q.add(cur.rightChild);
