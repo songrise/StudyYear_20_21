@@ -62,3 +62,5 @@ abstract
 
 lec 9 
 - 7 Which Catch Clause Should Be Used?
+- 30 wildcards
+- 33 Wildcards and Subtyping
