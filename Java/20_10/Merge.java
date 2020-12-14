@@ -61,5 +61,6 @@ public class Merge {
         int[] b = { 1, 2, 6, 10, 11 };
         Arrays.binarySearch(a, fromIndex, toIndex, key)
         System.out.println(Arrays.toString(merge(a, b)));
+        
     }
 }

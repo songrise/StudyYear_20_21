@@ -14,5 +14,7 @@ public class TestOneClass {
         a = b += c = a + 5;
         System.out.printf("%d %d %d", a, b, c);
         System.out.println(d + "");
+        Object obj = new Object();
+        obj.
     }
 }

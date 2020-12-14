@@ -61,7 +61,5 @@ abstract
 
 lec 9 
 - 7 Which Catch Clause Should Be Used?
-
-lec 10
-- at any given time, no more than one thread should be in the critical region (w.r.t. a specific shared resource)
-- A thread may have multiple locks at certain point in time.
+- 30 wildcards
+- 33 Wildcards and Subtyping
