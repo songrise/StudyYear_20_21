@@ -26,14 +26,15 @@ class MyT implements Runnable {
 
 public class TestThread {
     public static void main(String[] args) throws Exception {
-        Num number = new Num(4);
-        Thread t = new Thread(new MyT(number));
-        Thread t2 = new Thread(new MyT(number));
-        t.start();
-        // t.interrupt();
-        t.join();
-        number.inc();
-        t2.start();
+        // Num number = new Num(4);
+        // Thread t = new Thread(new MyT(number));
+        // Thread t2 = new Thread(new MyT(number));
+        // t.start();
+        // // t.interrupt();
+        // t.join();
+        // number.inc();
+        // t2.start();
 
+        
     }
 }

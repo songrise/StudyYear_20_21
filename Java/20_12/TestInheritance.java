@@ -1,3 +1,4 @@
+
 class Shape {
     int n = 1;
 
@@ -12,6 +13,11 @@ class Shape {
     double area() {
         return 0;
     }
+
+    private void fun() {
+        System.out.println("not inherited");
+    }
+
 }
 
 class Circle extends Shape {
@@ -34,6 +40,10 @@ class Circle extends Shape {
     double perimeter() {
         return 6;
     }
+
+    public void fun() {
+        System.out.println("not the inherited one");
+    }
 }
 
 public class TestInheritance {
@@ -46,5 +56,6 @@ public class TestInheritance {
         for (Shape sp : shapes) {
             System.out.println(sp.area());
         }
+        ((Circle) s).fun();
     }
 }

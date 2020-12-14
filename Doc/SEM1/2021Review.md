@@ -24,8 +24,7 @@ lec3
 - One constructor may call another to partially initialize an object *The call has to be the first statement*
 - initialize order; 1.initializer 2. constructor
 - Methods of the same name can be declared in the same class, as long as they have different signatures
-- 27 Parameter names and the return type, however, arenot
-part of the signature!!! 所以只有返回类型不同不行, 参数顺序不同可以
+- 27 Parameter names and the return type, however, arenot part of the signature!!! 所以只有返回类型不同不行, 参数顺序不同可以
 - 30 There is exactly one copy of static fields, no matter how many objects there are created(0,1,N)
 - No "this" in a static method
 - initialization of static fields: p 33.
