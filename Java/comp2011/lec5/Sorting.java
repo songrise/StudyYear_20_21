@@ -36,7 +36,7 @@ public class Sorting {
     public static void recursiveInsertion(int arr[], int n) {
         if (n <= 1)
             return;
-        insertionSort(arr, n - 1);
+        recursiveInsertion(arr, n - 1);
         int last = arr[n - 1];
         int i = n - 2;
         while (i >= 0 && arr[i] > last) {

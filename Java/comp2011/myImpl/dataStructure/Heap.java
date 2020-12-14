@@ -1,19 +1,21 @@
+package comp2011.myImpl.dataStructure;
+
 import java.security.SecureRandom;
 import java.util.Arrays;
 
-public class IntegerHeap {
+public class Heap {
 
     private int[] data;
     int size;
 
     public static void main(String[] args) {
         int[] arr = new int[] { 5, 3, 7, 1, 8, 10, 4 };
-        System.out.println(Arrays.toString(IntegerHeap.heapify(arr)));
+        System.out.println(Arrays.toString(Heap.heapify(arr)));
         // test();
     }
 
-    static void test() {
-        IntegerHeap heap = new IntegerHeap(20);
+    static void test() { // use heap sort to test.
+        Heap heap = new Heap(20);
         for (int i = 0; i < 1000; i++) {
             SecureRandom random = new SecureRandom();
             int size = random.nextInt(100) % 100;
@@ -24,7 +26,7 @@ public class IntegerHeap {
             int[] cpy = Arrays.copyOf(a, a.length);
             // System.out.println(Arrays.toString(cpy));
             Arrays.sort(cpy);
-            IntegerHeap.heapSort(a);
+            Heap.heapSort(a);
             if (!Arrays.equals(a, cpy)) {
                 System.out.println(Arrays.toString(cpy));
                 System.out.println(Arrays.toString(a));
@@ -34,7 +36,7 @@ public class IntegerHeap {
     }
 
     @SuppressWarnings("unchecked")
-    public IntegerHeap(int capacity) {
+    public Heap(int capacity) {
         data = new int[capacity];
         size = 0;
     }
@@ -207,7 +209,7 @@ public class IntegerHeap {
      * This is a naive version of heapsort, and it needs extra space.
      */
     public static void heapSort(int[] arr) { // in-place
-        IntegerHeap heap = new IntegerHeap(arr.length);
+        Heap heap = new Heap(arr.length);
         for (int i = 0; i < arr.length; i++)
             heap.insert(arr[i]);
         for (int i = arr.length - 1; i >= 0; i--)
@@ -217,10 +219,10 @@ public class IntegerHeap {
     /**
      * 
      * @param arr
-     * @return hepified arr.
+     * @return heapified arr.
      */
     public static int[] heapify(int[] arr) {
-        IntegerHeap heap = new IntegerHeap(arr.length);
+        Heap heap = new Heap(arr.length);
         for (int i = 0; i < arr.length; i++)
             heap.insert(arr[i]);
         return heap.data;

@@ -21,12 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3bbfa020-e47c-481e-ac06-1a7dd8446b8a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lec1/Sorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec1/Sorting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lec6/Sorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec6/Sorting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lec8/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec8/BinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lec8/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/lec8/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/Queue.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -117,33 +117,6 @@ public class Sorting {
     }
     // !=====================
 
-    // public static void selectionSort(int[] arr) {
-    // int l = arr.length;
-    // int min = 0x80000000;
-    // for (int i = 0; i < l - 1; i++) {
-    // min = i;
-    // for (int j = i + 1; j < l; j++) {
-    // if (arr[min] >= arr[j]) {
-    // min = j;
-    // }
-    // swap(arr, min, i);
-    // }
-    // }
-    // }
-
-    // public static void tsort(int[] a) {
-    // int n = a.length;
-    // for (int i = n - 1; i < 0; --i) {
-    // int k = i;
-    // for (int j = 0; j < i; j++) {
-    // if (a[k] < a[j])
-    // k = j;
-    // swap(a, i, k);
-    // }
-
-    // }
-    // }
-
     public static void main(String args[]) {
         int[] a = { 3, 2, 6, 13, 8, 4, 10, 7, 14, 11, 12, 5, 9 };
 
