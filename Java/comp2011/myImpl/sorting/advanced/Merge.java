@@ -155,20 +155,35 @@ public class Merge {
      * 
      * However, this doesn't work, please try to fix it.
      */
+    // public static void iMergesort(int[] a) {
+    // if (a.length == 0) {
+    // return;
+    // }
+    // int i, j, n = a.length;
+    // for (i = 2; i < n; i *= 2) {
+    // for (j = 0; j < n - i / 2 + 1; j += i) {// change this line
+    // int h = j + i - 1;
+    // if (h >= n)
+    // h = n - 1;
+    // mergeV2(a, j, j + i / 2 - 1, h);
+    // }
+    // }
+    // mergeV2(a, 0, i / 2 - 1, n - 1);// add this line ! last iteration
+    // }
+
     public static void iMergesort(int[] a) {
         if (a.length == 0) {
-            return ;
+            return;
         }
-        int i, j, n = a.length;
-        for (i = 2; i < n; i *= 2) {
-            for (j = 0; j < n - i / 2 + 1; j += i) {// change this line
-                int h = j + i - 1;
-                if (h >= n)
-                    h = n - 1;
-                mergeV2(a, j, j + i / 2 - 1, h);
+        int l = a.length;
+        for (int size = 1; size < l; size *= 2) {
+            // System.out.println(".");
+            for (int i = 0; i < l - size; i += 2 * size) {
+                int mid = i + size - 1;
+                int high = Math.min(i + size + size - 1, l - 1);
+                mergeV2(a, i, mid, high);
             }
         }
-        mergeV2(a, 0, i / 2 - 1, n - 1);// add this line
     }
 
 }

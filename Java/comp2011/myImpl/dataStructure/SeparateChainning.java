@@ -3,8 +3,6 @@ package comp2011.myImpl.dataStructure;
 import java.util.ArrayList;
 import java.util.List;
 
-import comp2011.lec4.LinkedList;
-
 /**
  * 
  * @author yixin cao (November 20, 2020)
@@ -19,11 +17,9 @@ import comp2011.lec4.LinkedList;
 public class SeparateChainning {
 
     public static void main(String[] args) {
-        SeparateChainning table = new SeparateChainning(13);
-        table.insert(14);
-        table.insert(41);
-        table.insert(40);
-        table.delete(14);
+        SeparateChainning table = new SeparateChainning(7);
+        int[] a = { 1001, 1003, 1011, 2011, 2021, 2411, 2421, 3011, 3334, 3438, 4011, 4432 };
+        table.batchAdd(a);
         System.out.println(table);
     }
 
@@ -36,6 +32,15 @@ public class SeparateChainning {
         data = new ArrayList[size];
         for (int i = 0; i < size; i++)
             data[i] = new ArrayList<Integer>();
+    }
+
+    public void batchAdd(int[] labels) {
+        if (labels == null) {
+            return;
+        }
+        for (int i : labels) {
+            insert(i);
+        }
     }
 
     // very stupid one.

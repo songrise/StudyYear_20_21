@@ -36,6 +36,12 @@ public class IterativeVer {
         System.out.println("finished.");
     }
 
+    private static void swap(int[] a, int x, int y) {
+        int temp = a[x];
+        a[x] = a[y];
+        a[y] = temp;
+    }
+
     public static void selectionSort(int[] a) {
         int n = a.length;
         int min;
@@ -45,9 +51,7 @@ public class IterativeVer {
                 if (a[min] > a[j])
                     min = j;
             }
-            int temp = a[min];
-            a[min] = a[i];
-            a[i] = temp;
+            swap(a, i, min);
         }
     }
 
@@ -58,7 +62,7 @@ public class IterativeVer {
             for (j = i - 1; j >= 0; j--) {
                 if (a[j] <= key)
                     break;
-                a[j + 1] = a[j];
+                a[j + 1] = a[j];// shift right
             }
             a[j + 1] = key;
         }
@@ -72,9 +76,7 @@ public class IterativeVer {
             flag = false;
             for (j = 0; j < n - i; j++)
                 if (a[j + 1] < a[j]) {
-                    temp = a[j + 1];
-                    a[j + 1] = a[j];
-                    a[j] = temp;
+                    swap(a, j + 1, j);
                     flag = true;
                 }
         }
@@ -88,9 +90,7 @@ public class IterativeVer {
         for (i = 1; i < n; i++) {
             for (j = 0; j < n - i; j++)
                 if (a[j + 1] < a[j]) {
-                    temp = a[j + 1];
-                    a[j + 1] = a[j];
-                    a[j] = temp;
+                    swap(a, j + 1, j);
                 }
         }
     }

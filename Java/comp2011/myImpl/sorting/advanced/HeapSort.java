@@ -76,11 +76,25 @@ public class HeapSort {
 
     // iterative version
     private static void iDown(int[] a, int p) {
+        while (2 * p <= a.length) {
+            int j = 2 * p;
+            if (j < a.length && a[j] < a[j + 1])
+                j++;
+            if ((a[p] >= a[j])) {
+                break;
+            }
+            swap(a, p, j);
+            p = j;
+        }
     }
 
     public static void heapSort(int[] a) {
-        for (int i = 1; i < a.length; i++)
-            up(a, i);
+        for (int i = 1; i < a.length; i++) {
+            up(a, i);// build heap
+        }
+        // for (int i = a.length / 2; i > 0; i--) {
+        // down(a, i, a.length - 1);
+        // }
         for (int size = a.length - 1; size > 0; size--) {
             swap(a, 0, size); // a simler way of deleteMax.
             down(a, 0, size);
@@ -89,4 +103,37 @@ public class HeapSort {
         }
     }
 
+}
+
+class MyHS {
+
+    private static void swap(int[] a, int x, int y) {
+        int temp = a[x];
+        a[x] = a[y];
+        a[y] = temp;
+    }
+
+    private void up(int[] arr, int i) {
+        if (i == 0) {
+            return;
+        }
+        int parent = (i - 1) / 2;
+        if (arr[i] >= arr[parent]) {
+            return;
+        }
+        swap(arr, i, parent);
+        up(arr, parent);
+    }
+
+    private void down(int[] arr, int i, int size) {
+        // if (i*2+2>size) {
+        // return;
+        // }
+        // int left = 2 * i + 1;
+        // int right = left + 1;
+        // if(right<size){
+
+        // }
+
+    }
 }

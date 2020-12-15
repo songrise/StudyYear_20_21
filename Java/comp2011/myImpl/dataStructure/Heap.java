@@ -9,8 +9,11 @@ public class Heap {
     int size;
 
     public static void main(String[] args) {
-        int[] arr = new int[] { 5, 3, 7, 1, 8, 10, 4 };
+        int[] arr = new int[] { 9, 4, 13, 2, 8, 11, 20 };
         System.out.println(Arrays.toString(Heap.heapify(arr)));
+        Heap heap = new Heap(32);
+        heap.batchAdd(arr);
+        System.out.println(heap);
         // test();
     }
 
@@ -39,6 +42,15 @@ public class Heap {
     public Heap(int capacity) {
         data = new int[capacity];
         size = 0;
+    }
+
+    public void batchAdd(int[] labels) {
+        if (labels == null) {
+            return;
+        }
+        for (int i : labels) {
+            insert(i);
+        }
     }
 
     private void swap(int i, int j) {

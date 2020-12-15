@@ -9,9 +9,7 @@ public class BinarySearchTree {
         // !++++++++++build tree++++++++++++++++++
         BinarySearchTree tree = new BinarySearchTree();
         int[] arr = { 214, 562, 83, 115, 97, 722, 398, 798, 408, 199, 37 };
-
-        for (int i = 0; i < arr.length; i++)
-            tree.insert(arr[i]);
+        tree.batchAdd(arr);
 
         System.out.println("tree built.");
         // tree.levelDisplay();
@@ -69,6 +67,15 @@ public class BinarySearchTree {
 
     public BinarySearchTree() {
         root = null;
+    }
+
+    public void batchAdd(int[] labels) {
+        if (labels == null) {
+            return;
+        }
+        for (int i : labels) {
+            insert(i);
+        }
     }
 
     // the recursive version of insert and its wrapper.
@@ -178,6 +185,7 @@ public class BinarySearchTree {
                 return x.leftChild;
             if (x.leftChild == null)
                 return x.rightChild;
+            // else has to children
             Node t = x;
             x = recFindMin(t.rightChild);
             x.rightChild = deleteMin(t.rightChild);

@@ -91,14 +91,14 @@ public class Quick {
 
         int pivot = arr[hi];
         int i = lo, j = lo;
-        for (; i < hi + 1; i++) { // note i must be able to reach hi.
+        for (; i < hi + 1; i++) { // !! note i must be able to reach hi.
             if (arr[i] <= pivot) {
                 swap(arr, i, j);
                 j++;
             }
         }
 
-        return j; // j is not the index of pivot, but pivot + 1, since j++;
+        return j; // ! j is not the index of partition, but pivot + 1, since j++;
     }
 
     // ! hoare partition
@@ -106,18 +106,39 @@ public class Quick {
     public static void quickSortHoare(int[] a, int begin, int end) {
         if (begin >= end)
             return;
-        int i = begin - 1, j = end + 1;
-        int pivot = a[end];
-        while (i < j) {
-            while (a[++i] < pivot)
-                ;
-            while (a[--j] > pivot)
-                ;
-            if (i < j)
-                swap(a, i, j);
-        }
+        // int i = begin - 1, j = end + 1;
+        // int pivot = a[end];
+        // while (i < j) {
+        // while (a[++i] < pivot)
+        // ;
+        // while (a[--j] > pivot)
+        // ;
+        // if (i < j)
+        // swap(a, i, j);
+        // }
+        int i = hoarePartition(a, begin, end);
         quickSortHoare(a, begin, i - 1);
         quickSortHoare(a, i, end);
+    }
+
+    static int hoarePartition(int[] arr, int begin, int end) {
+        if (begin >= end) {
+            return -1;
+        }
+        int i = begin - 1, j = end + 1;// !notice -1 and +1
+        int pivot = arr[end];
+        while (i < j) { // ?? they cannot be equal
+            while (arr[++i] < pivot) {
+                // pass
+            }
+            while (arr[--j] > pivot) {
+                // pass
+            }
+            if (i < j) { // !notice this condition
+                swap(arr, i, j);
+            }
+        }
+        return i; //
     }
 
 }

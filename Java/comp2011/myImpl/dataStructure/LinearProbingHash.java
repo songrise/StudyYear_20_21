@@ -20,11 +20,9 @@ public class LinearProbingHash {
 
     public static void main(String[] args) {
         // For demonstration, we use a small table with few elements.
-        LinearProbingHash table = new LinearProbingHash(13);
+        LinearProbingHash table = new LinearProbingHash(17);
         int[] subjects = { 2012, 4141, 4142, 4146, 4334, 4342, 4431, 4433, 4434, 4435, 4531, 4921 };
-        for (int s : subjects) {
-            table.insert(s);
-        }
+        table.batchAdd(subjects);
         table.delete(2012);
         // table.search();
         System.out.println(Arrays.toString(table.data));
@@ -47,6 +45,15 @@ public class LinearProbingHash {
         // The following can be omitted, beacuse Java always do this during its
         // initialization.
         Arrays.fill(tombstone, false);
+    }
+
+    public void batchAdd(int[] labels) {
+        if (labels == null) {
+            return;
+        }
+        for (int i : labels) {
+            insert(i);
+        }
     }
 
     public void insert(int code) {
