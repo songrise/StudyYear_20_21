@@ -4,6 +4,8 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import org.graalvm.compiler.debug.DebugOptions.PrintGraphTarget;
+
 /**
  * 
  * @author yixin cao (November 20, 2020)
@@ -21,20 +23,25 @@ public class LinearProbingHash {
     public static void main(String[] args) {
         // For demonstration, we use a small table with few elements.
         LinearProbingHash table = new LinearProbingHash(17);
-        int[] subjects = { 2012, 4141, 4142, 4146, 4334, 4342, 4431, 4433, 4434, 4435, 4531, 4921 };
-        table.batchAdd(subjects);
+        // int[] subjects = { 2012, 4141, 4142, 4146, 4334, 4342, 4431, 4433, 4434,
+        // 4435, 4531, 4921 };
+        int[] arr = { 1, 2, 18, 19, 20 };
+        table.batchAdd(arr);
+        table.show();
+        table.search(1);
+        table.search(18);
         table.delete(2012);
         // table.search();
-        System.out.println(Arrays.toString(table.data));
+        System.out.println();
         table.insert(2011);
 
         // loadFactorTest();
     }
 
-    private int M;
+    private int M;// capacity
     private int[] data;
     boolean[] tombstone;
-    private int size = 0;
+    private int size = 0; // size <= M
 
     LinearProbingHash(int M) {
         this.M = M;
@@ -45,6 +52,14 @@ public class LinearProbingHash {
         // The following can be omitted, beacuse Java always do this during its
         // initialization.
         Arrays.fill(tombstone, false);
+    }
+
+    void show() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < M; i++) {
+            sb.append("(" + Boolean.toString(tombstone[i]) + ", " + Integer.toString(data[i]) + ")");
+        }
+        System.out.println("[" + sb.toString() + "]");
     }
 
     public void batchAdd(int[] labels) {
@@ -63,18 +78,27 @@ public class LinearProbingHash {
             return;
         }
         int i;
-        for (i = hash(code); (!tombstone[i]) && data[i] != -1; i = (i + 1) % M)
+        for (i = hash(code); (!tombstone[i]) && data[i] != -1; i = (i + 1) % M) {// loop until end of cluster.
+
             if (data[i] == code)
-                break;
+                break;// no duplicate
+        }
         data[i] = code;
-        tombstone[i] = false;
+        tombstone[i] = false;// must do this
         size++;
     }
 
+    private int searchCompCnt = 0;
+
     public int search(int code) {
-        for (int i = hash(code); tombstone[i] || data[i] != -1; i = (i + 1) % M)
-            if (code == data[i])
+        searchCompCnt = 0;
+        for (int i = hash(code); tombstone[i] || data[i] != -1; i = (i + 1) % M) {// search in a cluster
+            searchCompCnt++;
+            if (code == data[i]) {
+                System.out.println("Compared " + searchCompCnt + " times after found the element.");
                 return i;
+            }
+        }
         return -1; // meaning not found
     }
 
@@ -88,7 +112,7 @@ public class LinearProbingHash {
     }
 
     int hash(int code) {
-        return code % M;
+        return (code & 0x7fffffff) % M;
     }
 
     int[] clusters() {

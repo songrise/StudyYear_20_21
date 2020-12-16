@@ -135,9 +135,9 @@ public class Merge {
          * - low + 1]; for (int i = 0; i < temp.length; i ++) temp[i] = a[low + i];
          */
         int[] temp = Arrays.copyOfRange(a, low, mid + 1);
-        int i = 0, j = mid + 1, k = low;
+        int i = 0, j = mid + 1, k = low;// i:index of temp, j: index of right part,k:index of new(merged arr)
         while (i < temp.length && j <= high)
-            a[k++] = temp[i] <= a[j] ? temp[i++] : a[j++]; // not stable if <= is replaced by <.
+            a[k++] = temp[i] <= a[j] ? temp[i++] : a[j++]; // not stable if <= is replaced by <.! notice the place of ++
         while (i < temp.length)
             a[k++] = temp[i++];
         // There is no need to deal with the leftovers of the second part. why?

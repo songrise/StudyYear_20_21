@@ -11,8 +11,12 @@ public class IterativeVer {
         // System.out.println("after sorted: " + Arrays.toString(a));
         // for (int i = 0; i < 18; i++)
         // longTest(2<<i);
+        // int[] a = { 2011, 2020, 11, 10, 30, 2 };
+        // insertionSort(a);
         test();
     }
+
+    static int cnt;
 
     static void test() {
         for (int i = 0; i < 1000; i++) {
@@ -26,7 +30,7 @@ public class IterativeVer {
             int[] cpy = Arrays.copyOf(a, a.length);
             // System.out.println(Arrays.toString(cpy));
             Arrays.sort(cpy);
-            bubbleSort(a);
+            insertionSort(a);
             if (!Arrays.equals(a, cpy)) {
                 System.out.println(Arrays.toString(cpy));
                 System.out.println(Arrays.toString(a));
@@ -43,6 +47,7 @@ public class IterativeVer {
     }
 
     public static void selectionSort(int[] a) {
+
         int n = a.length;
         int min;
         for (int i = 0; i < n - 1; i++) {
@@ -56,13 +61,15 @@ public class IterativeVer {
     }
 
     public static void insertionSort(int[] a) {
+
         int i, j, key, n = a.length;
         for (i = 1; i < n; i++) {
             key = a[i];
             for (j = i - 1; j >= 0; j--) {
                 if (a[j] <= key)
                     break;
-                a[j + 1] = a[j];// shift right
+
+                swap(a, j, j + 1);// shift right
             }
             a[j + 1] = key;
         }

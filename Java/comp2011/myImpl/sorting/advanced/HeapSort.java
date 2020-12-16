@@ -72,13 +72,20 @@ public class HeapSort {
 
     // iterative version
     private static void iUp(int[] a, int c) {
+        while (c != 0) {
+            int p = (c - 1) / 2;
+            if (a[c] <= a[p])
+                break;
+            swap(a, c, p);
+            c = p;
+        }
     }
 
     // iterative version
-    private static void iDown(int[] a, int p) {
-        while (2 * p <= a.length) {
-            int j = 2 * p;
-            if (j < a.length && a[j] < a[j + 1])
+    private static void iDown(int[] a, int p, int size) {
+        while (2 * p + 2 <= size) {
+            int j = 2 * p + 1;
+            if (j + 1 < size && a[j] < a[j + 1])
                 j++;
             if ((a[p] >= a[j])) {
                 break;
@@ -90,14 +97,16 @@ public class HeapSort {
 
     public static void heapSort(int[] a) {
         for (int i = 1; i < a.length; i++) {
-            up(a, i);// build heap
+            // up(a, i);// build heap
+            iUp(a, i);
         }
         // for (int i = a.length / 2; i > 0; i--) {
         // down(a, i, a.length - 1);
         // }
         for (int size = a.length - 1; size > 0; size--) {
             swap(a, 0, size); // a simler way of deleteMax.
-            down(a, 0, size);
+            // down(a, 0, size);// delmax
+            iDown(a, 0, size);
             // Uncomment the following line to see the progress.
             // System.out.println(Arrays.toString(a));
         }
