@@ -8,11 +8,13 @@ public class BinarySearchTree {
     public static void main(String[] args) {
         // !++++++++++build tree++++++++++++++++++
         BinarySearchTree tree = new BinarySearchTree();
-        int[] arr = { 214, 562, 83, 115, 97, 722, 398, 798, 408, 199, 37 };
+        int[] arr = { 50, 40, 60, 70, 80, 30, 20, 65, 55, 45, 35, 56, 54, 47, 41 };
         tree.batchAdd(arr);
 
         System.out.println("tree built.");
         // tree.levelDisplay();
+        // tree.levelDisplay();
+
         tree.prettyPrintTree();
         // !++++++++++build tree++++++++++++++++++
 

@@ -30,13 +30,13 @@ class BinaryTree {
             System.out.println("t is balanced");
         }
         System.out.println("====================");
-        TreeNode t2 = BinaryTree.stringToTreeNode("[30, 32, 40, 45, 50, 56, 60, 64, 70, 73, 80]");
-        BinaryTree.prettyPrintTree(t2);
-        if (TreeUtil.isBalanced(t2)) {
-            System.out.println("t2 is balanced");
-        }
-        System.out.println(TreeUtil.height(t2));
-        System.out.println(TreeUtil.nbrNodes(t2));
+        // TreeNode t2 = BinaryTree.stringToTreeNode("[30, 32, 40, 45, 50, 56, 60, 64, 70, 73, 80]");
+        // BinaryTree.prettyPrintTree(t2);
+        // if (TreeUtil.isBalanced(t2)) {
+        //     System.out.println("t2 is balanced");
+        // }
+        // System.out.println(TreeUtil.height(t2));
+        // System.out.println(TreeUtil.nbrNodes(t2));
 
     }
 

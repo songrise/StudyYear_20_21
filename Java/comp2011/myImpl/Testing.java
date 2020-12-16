@@ -2,11 +2,111 @@ package comp2011.myImpl;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+
+import javax.swing.plaf.synth.SynthStyleFactory;
 
 public class Testing {
     public static void main(String[] args) {
-        test();
+        // g(7);
+        // System.out.println(fun(7));
+        // System.out.println(count);
+        // System.out.println(count + "!");
+        // int[] a = { 3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2 };
+        // System.out.println(f(a, a.length, 2));
+        // System.out.println(f(a, a.length, 4));
+        // int[] a = { 3, 2, 1, 2, 1, 4, 5, 8, 6, 7, 4, 2 };
+        // int[][] a = { { 20, 11 }, { 30, 40 }, { 5, 10 }, { 20, 20 }, { 40, 30 }, {
+        // 11, 20 }, { 10, 5 } };
+        int[] b = { 10, 5, 3, 5, 10, 4, 1, 3, 5 };
+        f(b);
+        // System.out.println(f(a));
+        // System.out.println(f(b, 2));
+
     }
+
+    private static void f(int[] a) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < a.length; i++) {
+            Integer c = map.get(a[i]);
+            if (c == null)
+                c = 0;
+            map.put(a[i], c + 1);
+        }
+        for (int i = 0; i < a.length; i++) {
+            Integer count = map.get(a[i]);
+            if (count != null) {
+                for (int j = 0; j < count; j++) {
+                    System.out.print(a[i] + " ");
+                }
+                map.remove(a[i]);
+            }
+        }
+    }
+
+    // private static int f(int[] a) {
+    // HashMap<Integer, Integer> map = new HashMap<>();
+    // int d = 0;
+    // for (int i = 0; i < a.length; i++) {
+    // if (!map.containsKey(a[i])) {
+    // map.put(a[i], i);
+    // } else {
+    // d = Math.max(d, i - map.get(a[i]));
+    // }
+    // }
+    // return d;
+
+    // }
+
+    static int count = 0;
+
+    static long fun(int n) {
+        if (n == 2) {
+            count += 1;
+        }
+        if (n <= 1)
+            return n;
+        return fun(n - 2) + fun(n - 1);
+    }
+
+    // private static int f(int[] a, int n, int k) {
+    // HashMap<Integer, Integer> map = new HashMap<>();
+    // for (int i = 0; i < n; i++) {
+    // int c = 0;
+    // if (map.get(a[i]) != null)
+    // c = map.get(a[i]);
+    // map.put(a[i], c + 1);
+    // }
+    // for (int i = 0; i < n; i++) {
+    // if (map.get(a[i]) == k) {
+    // return a[i];
+    // }
+    // }
+    // return -1;
+
+    // }
+    // static int f(int n) {
+    // if (n <= 1) {
+    // System.out.print("1");
+    // return 1;
+    // }
+    // System.out.print(n + " -> ");
+    // return g(n * 3 + 1);
+
+    // }
+
+    // static int g(int n) {
+    // count++;
+    // System.out.print(n + " -> ");
+
+    // while (n % 2 == 0) {
+    // n /= 2;
+    // }
+    // return f(n);
+    // }
+
+    // !!!!!!!!
 
     static void test() {
         for (int i = 0; i < 1000; i++) {

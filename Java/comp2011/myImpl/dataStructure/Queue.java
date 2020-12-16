@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Queue {
 
-    public static void main(String[] args) {
+    public static void main(String[] arg) {
         Queue queue = new Queue(5);
         queue.enqueue(1);
         queue.enqueue(2);

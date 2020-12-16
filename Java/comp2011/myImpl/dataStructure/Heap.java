@@ -9,8 +9,8 @@ public class Heap {
     int size;
 
     public static void main(String[] args) {
-        int[] arr = new int[] { 9, 4, 13, 2, 8, 11, 20 };
-        System.out.println(Arrays.toString(Heap.heapify(arr)));
+        int[] arr = new int[] { 50, 40, 60, 70, 80, 30, 20, 65, 55, 45, 35, 56, 54, 47, 41};
+        // System.out.println(Arrays.toString(Heap.heapify(arr)));
         Heap heap = new Heap(32);
         heap.batchAdd(arr);
         System.out.println(heap);

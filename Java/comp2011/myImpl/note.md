@@ -29,3 +29,4 @@ n个节点二叉链表, 有n+1个空指针。 n-1 个非空指针
 
 ## 堆  
 下标为k的节点，父节点:$\lceil \frac{k-1}{2} \rceil$ 左：2k+1 右：2k+2  
+Number of (binary) heaps on n elements.  1, 1, 1, 2, 3, 8, 20, 80, 210, 896, 3360, 19200,
