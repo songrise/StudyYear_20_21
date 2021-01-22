@@ -37,20 +37,31 @@ SEM2
 - COMP 2432 OS
 - SL
 - CAR
-- AMA 1107 linear algebra
+- AMA 1007 linear algebra
+- AMA 1502 statistics
   
 21-22
 SEM1
 - COMP 3211 Software Engineering
 - COMP 3424 H-C Interaction
+- COMP 3424 System programming
 - CBS 3242P Chinese
-- COMP 3011 Algorithm
-- AMA 456 Graphs
+- AMA 2007 intermediate calculus and linear algebra
+- comp elective2
 
 SEM2
 - COMP3334 System Security
 - COMP3511 Legal
-- AMA482 Schduling
-- COMP 4011 Theory of Computing
+- AMA2691 Probability and Distributions
+- AMA364 Statistical Inference
+- COMP elective3
 
 SUM CREDITS  69 GPA >3.7
+
+22-23
+sem1
+comp 4913 capstone project
+elc
+AMA301 Computational Methods
+AMA382 Operations Research methods
+comp elective

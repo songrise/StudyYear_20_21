@@ -1,6 +1,5 @@
 # %%
 from keras.models import Sequential
-from keras.models import Sequential
 from keras.layers import Dense
 from keras.layers import Dropout
 from keras.layers import Flatten
