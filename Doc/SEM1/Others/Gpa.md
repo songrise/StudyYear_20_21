@@ -29,4 +29,14 @@ A  (database)
 A- (ML)
 A (AMA)
 (sem GPA 4.0)
-47 (\apporx)176 3.78
+47 176 3.78
+
+20-21 sem2
+A 1007
+A+ 1502
+A+ OS
+A CO
+A Net
+A DA
+sem GPA 4.1
+65 249.8 (\approx 3.84) (Max 3.89, Avg 3.81)
