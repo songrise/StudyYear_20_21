@@ -34,9 +34,9 @@ A (AMA)
 20-21 sem2
 A 1007
 A+ 1502
-A+ OS
-A CO
-A Net
+A- OS
+A- CO
+A- Net
 A DA
-sem GPA 4.1
+sem GPA 4.9
 65 249.8 (\approx 3.84) (Max 3.89, Avg 3.81)
