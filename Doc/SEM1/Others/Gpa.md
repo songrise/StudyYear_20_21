@@ -23,7 +23,8 @@ B+
 20-21(new GPA)
 ---
 A+  (OOP)  
-A (discrete)
+A (discrete)ssh ubuntu@111.23.141.196 -p 32502
+A (discrete)ssh ubuntu@111.23.141.196 -p 32502
 A (data structure)
 A  (database)
 A- (ML)
@@ -32,11 +33,11 @@ A (AMA)
 47 176 3.78
 
 20-21 sem2
-A 1007
-A+ 1502
-A- OS
-A- CO
+A+ 1007
+A 1502
+A OS
+A CO
 A- Net
-A DA
-sem GPA 4.9
-65 249.8 (\approx 3.84) (Max 3.89, Avg 3.81)
+A+ DA
+sem GPA 4.05
+cum. gp: 65 cum. credits 248.9 cum.gpa 3.85

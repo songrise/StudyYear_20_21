@@ -22,11 +22,22 @@ B+
 ---
 20-21(new GPA)
 ---
-A  (OOP)  
-A+ (discrete)
-A- (data structure)
+A+  (OOP)  
+A (discrete)ssh ubuntu@111.23.141.196 -p 32502
+A (discrete)ssh ubuntu@111.23.141.196 -p 32502
+A (data structure)
 A  (database)
-B+ (ML)
-A+ (AMA)
-(sem GPA 3.91)
-47 (\apporx)176 3.745
+A- (ML)
+A (AMA)
+(sem GPA 4.0)
+47 176 3.78
+
+20-21 sem2
+A+ 1007
+A 1502
+A OS
+A CO
+A- Net
+A+ DA
+sem GPA 4.05
+cum. gp: 65 cum. credits 248.9 cum.gpa 3.85
